@@ -6,23 +6,35 @@
     <title>Login Form</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- FontAwesome for Icons -->
 </head>
 <body>
     <div class="bg-image"></div> <!-- ภาพพื้นหลัง -->
     <div class="login-container">
         <img src="../public/img/logo-tu.png" alt="TU Logo" class="logo"> <!-- โลโก้ -->
         <h1>LOGIN</h1>
-        <form>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">LOGIN</button>
+        <form class="login-form">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">LOGIN</button>
         </form>
         <p id="message"></p>
     </div>
     <script src="js/script.js"></script>
 </body>
 </html>
+
 
 

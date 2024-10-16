@@ -51,6 +51,62 @@ body {
     }
 }
 
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 100%; }
+}
+
+.input-group {
+    display: flex;
+    align-items: center; /* จัดให้ไอคอนอยู่กลางกับ input */
+    margin-bottom: 10px; /* เพิ่มระยะห่างระหว่าง input แต่ละช่อง */
+}
+
+.input-group-text {
+    background-color: #375371; /* สีพื้นหลังของไอคอน */
+    border: none; /* ปิดกรอบของไอคอน */
+    color: white; /* สีของไอคอน */
+    height: 45px; /* กำหนดความสูงให้เหมือนกับ input */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้ไอคอนอยู่กลาง */
+    justify-content: center; /* จัดให้ไอคอนอยู่กลาง */
+    border-radius: 5px 0 0 5px; /* ทำให้มุมซ้ายของไอคอนมน */
+    padding: 0 10px; /* เพิ่ม padding ข้างใน */
+}
+
+input {
+    width: 100%;
+    height: 40px; /* กำหนดความสูงให้ตรงกับไอคอน */
+    padding: 10px; /* เพิ่ม padding */
+    border: 1px solid #ddd; /* สีกรอบ */
+    border-radius: 0 5px 5px 0; /* ทำให้มุมขวาของ input มน */
+    box-sizing: border-box; /* ทำให้ padding และ border ไม่ทำให้ขนาดเพิ่ม */
+}
+
+.bg-image {
+    animation: backgroundMove 30s ease infinite; /* เคลื่อนที่พื้นหลัง */
+}
+
+button {
+    transition: background-color 0.3s, transform 0.2s; /* เพิ่ม transition */
+}
+
+input:hover {
+    border-color: #007bff; /* เปลี่ยนสีเมื่อ hover */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* เพิ่มเงา */
+}
+
+h1 {
+    animation: float 2s infinite; /* เพิ่มการเคลื่อนไหวให้กับหัวข้อ */
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -72,7 +128,7 @@ input {
 }
 
 input:focus {
-    border-color: #007bff; /* เปลี่ยนสีกรอบเมื่อ focus */
+    border-color: #b1b6bb; /* เปลี่ยนสีกรอบเมื่อ focus */
     outline: none; /* ปิด outline */
 }
 
@@ -90,7 +146,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #73869a;
+    transform: translateY(-2px);
 }
 
 #message {
