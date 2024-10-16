@@ -1,20 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* ปิดการเลื่อน */
+    display: flex; /* ใช้ flexbox เพื่อจัดกลาง */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+}
+
+.bg-image {
+    background-image: url('../img/background.JPG'); /* ระบุ path ของรูปพื้นหลัง */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(5px); /* เพิ่มความเบลอให้กับพื้นหลัง */
+    z-index: 1; /* ให้ภาพพื้นหลังอยู่ด้านล่าง */
+}
+
+.logo {
+    display: block; /* ทำให้โลโก้แสดงเป็นบล็อก */
+    margin: 0 auto 20px; /* จัดกลางและเพิ่มระยะห่างด้านล่าง */
+    max-width: 20%; /* กำหนดความกว้างสูงสุดของโลโก้ */
+    height: auto; /* ทำให้ความสูงของโลโก้ปรับตามอัตราส่วน */
 }
 
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* เปลี่ยนเป็น max-width เพื่อไม่ให้เกินขอบ */
+    width: 100%; /* ทำให้กล่องยืดตามขนาดหน้าจอ */
+    padding: 30px; /* ปรับ padding */
+    background-color: rgba(255, 255, 255, 0.9); /* เพิ่มความโปร่งแสง */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative; /* ให้ container อยู่เหนือภาพพื้นหลัง */
+    z-index: 2; /* ให้ container อยู่เหนือภาพพื้นหลัง */
+    animation: glow 1.5s infinite alternate; /* เพิ่มการเคลื่อนไหวเรืองแสง */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* เอฟเฟกต์เรืองแสงเริ่มต้น */
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 123, 255, 1); /* เอฟเฟกต์เรืองแสงเมื่อเต็ม */
+    }
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
 label {
@@ -24,17 +64,29 @@ label {
 
 input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* ทำให้ padding และ border ไม่ทำให้ขนาดเพิ่ม */
+}
+
+input:focus {
+    border-color: #007bff; /* เปลี่ยนสีกรอบเมื่อ focus */
+    outline: none; /* ปิด outline */
 }
 
 button {
-    width: 100%;
+    width: 80%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: rgb(35, 75, 121);
     border: none;
     color: #fff;
+    border-radius: 5px; /* ปรับมุมให้มน */
     cursor: pointer;
+    transition: background-color 0.3s; /* เพิ่ม transition */
+    margin: 8px auto;
+    display: block; /* เพิ่มระยะห่างระหว่างปุ่ม */
 }
 
 button:hover {
@@ -44,4 +96,5 @@ button:hover {
 #message {
     margin-top: 20px;
     text-align: center;
+    color: #dc3545; /* สีแดงสำหรับข้อความแสดงผล */
 }

@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-image"></div> <!-- ภาพพื้นหลัง -->
     <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Username:</label>
+        <img src="../public/img/logo-tu.png" alt="TU Logo" class="logo"> <!-- โลโก้ -->
+        <h1>LOGIN</h1>
+        <form>
+            <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
+            <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
-            <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
+            <button type="submit">LOGIN</button>
         </form>
         <p id="message"></p>
     </div>
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
