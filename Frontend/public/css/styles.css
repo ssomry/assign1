@@ -135,7 +135,7 @@ input:focus {
 button {
     width: 80%;
     padding: 10px;
-    background-color: rgb(35, 75, 121);
+    background-color: rgb(31, 47, 65);
     border: none;
     color: #fff;
     border-radius: 5px; /* ปรับมุมให้มน */
